@@ -2,49 +2,23 @@
 import Layout from "../Layouts/layout.astro";
 import Header from "../Components/Index/Header.astro";
 import Footer from "../Components/Index/Footer.astro";
+import ArrowLeftFromArc from "../Components/Icons/Arrow-left-from-arc.astro";
+import Heart from "../Components/Icons/Heart.astro";
 ---
 
 <Layout TitlePage="AniHub">
   <div class="Body">
     <Header />
     <main>
-      <h1>AniHub</h1>
-      <h1>AniHub</h1>
-      <h1>AniHub</h1>
-      <h1>AniHub</h1>
-      <h1>AniHub</h1>
-      <h1>AniHub</h1>
-      <h1>AniHub</h1>
-      <h1>AniHub</h1>
-      <h1>AniHub</h1>
-      <h1>AniHub</h1>
-      <h1>AniHub</h1>
-      <h1>AniHub</h1>
-      <h1>AniHub</h1>
-      <h1>AniHub</h1>
-      <h1>AniHub</h1>
-      <h1>AniHub</h1>
-      <h1>AniHub</h1>
-      <h1>AniHub</h1>
-      <h1>AniHub</h1>
-      <h1>AniHub</h1>
-      <h1>AniHub</h1>
-      <h1>AniHub</h1>
-      <h1>AniHub</h1>
-      <h1>AniHub</h1>
-      <h1>AniHub</h1>
-      <h1>AniHub</h1>
-      <h1>AniHub</h1>
-      <h1>AniHub</h1>
-      <h1>AniHub</h1>
-      <h1>AniHub</h1>
-      <h1>AniHub</h1>
-      <h1>AniHub</h1>
-      <h1>AniHub</h1>
-      <h1>AniHub</h1>
-      <h1>AniHub</h1>
-      <h1>AniHub</h1>
-      <h1>AniHub</h1>
+			<div class="Introduction">
+				<h1>Tu plataforma de <span>anime favorita</span></h1>
+				<p>Descrubre, vota y conceta con la comunidad anime Argentina. Sigue tus <br /> series, comparte opiniones y encuentra tu proximo anime favorito.</p>
+				<div class="buttons">
+					<button class="Start"><ArrowLeftFromArc size="24" color="#000" strokeWidth="2" />Comenzar Gratis</button>
+					<button class="Explore"><Heart size="24" color="#000" strokeWidth="2"/>Explorar Catalogo</button>
+				</div>
+				<div class="statistics"></div>
+			</div>
     </main>
     <Footer />
   </div>
@@ -64,7 +38,61 @@ import Footer from "../Components/Index/Footer.astro";
 
     main {
       flex: 1;
-      color: white;
+			display: flex;
+			flex: row;
+			justify-content: center;
+			align-items: center;
+			font-family: 'Geist';
+			& .Introduction{
+				height: 70vh;
+				width: 70vw;
+				display: flex;
+				flex-direction: column;
+				justify-content: space-around;
+				align-items: center;
+				& h1 {
+					font-size: 4.5rem;
+					text-align: center;
+					color: white;
+					line-height: 1;
+					& span {
+						background: linear-gradient(135deg, #CA79FB, #F866BB);
+						-webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+					}
+				}
+				& p {
+					font-size: 1.3rem;
+					text-align: center;
+					width: 70%;
+					color: #d1d5dc;
+					line-height: 1.7;
+					margin-top: -5%;
+				}
+
+				& .buttons {
+					height: 10%;
+					background-color: green;
+					width: 100%;
+					margin-top: -9%;
+					display: flex;
+					flex-direction: row;
+					justify-content: center;
+					align-items: center;
+					& .Start {
+						display: flex;
+						flex-direction: row;
+						justify-content: center;
+						align-items: center;
+					}
+					& .Explore {
+						display: flex;
+						flex-direction: row;
+						justify-content: center;
+						align-items: center;
+					}
+				}
+			}
     }
   </style>
 </Layout>
