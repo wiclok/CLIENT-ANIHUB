@@ -1,7 +1,44 @@
 ---
 import Layout from "../Layouts/layout.astro";
+import Header from "../Components/Index/Header.astro";
+import Footer from "../Components/Index/Footer.astro";
 ---
 
 <Layout TitlePage="AniHub">
-	<h1>AniHub</h1>
+  <div class="Body">
+    <Header />
+    <main>
+      <h1>AniHub</h1>
+      <h1>AniHub</h1>
+      <h1>AniHub</h1>
+      <h1>AniHub</h1>
+      <h1>AniHub</h1>
+      <h1>AniHub</h1>
+      <h1>AniHub</h1>
+      <h1>AniHub</h1>
+      <h1>AniHub</h1>
+      <h1>AniHub</h1>
+      <h1>AniHub</h1>
+      <h1>AniHub</h1>
+    </main>
+    <Footer />
+  </div>
+
+  <style>
+    html, body {
+      height: 100%;
+    }
+
+    .Body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+			background: linear-gradient(150deg, #221B42 0%, #471474 50%, #221B42 100%);
+    }
+
+    main {
+      flex: 1;
+      color: white;
+    }
+  </style>
 </Layout>
