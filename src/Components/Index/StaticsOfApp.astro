@@ -1,0 +1,57 @@
+---
+const {
+  icon: Icon,
+  number,
+  data
+} = Astro.props
+---
+
+<div class="item">
+  <div class="icon">{Icon && <Icon size="32" color="#C27AFF" strokeWidth="2" />}</div>
+  <p class="number">{number}</p>
+  <p class="data">{data}</p>
+</div>
+
+<style>
+  .item{
+    height: 100%;
+    width: 22%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    &:hover {
+      .icon {
+        scale: 1.1;
+        box-shadow: 0 5px 10px -5px #a844ff;
+        transform: rotate(20deg);
+      }
+      .number {
+        color: #a844ff
+      }
+    }
+    & .icon {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: linear-gradient(to right, rgba(168, 85, 247, 0.2), rgba(236, 72, 153, 0.2));
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      transition: all 0.3s ease-in-out; 
+    }
+    & .number {
+      font-size: 1.8rem;
+      font-weight: bold;
+      margin-bottom: -.5rem;
+      transition: all 0.3s ease-in-out; 
+    }
+    & .data{
+      color: #989FAE;
+      font-size: 1rem;
+    }
+    
+  }
+</style>
