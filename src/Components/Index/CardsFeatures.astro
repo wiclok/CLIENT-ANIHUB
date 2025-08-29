@@ -1,0 +1,86 @@
+---
+const {
+  Icon,
+  Title,
+  Description,
+  Gradient = "linear-gradient(135deg, #CA79FB, #F866BB)"
+} = Astro.props
+---
+
+<div class="card">
+  <div class="icon" style={`background: ${Gradient}`}>
+    { Icon && <Icon size="35" color="#FFF" strokeWidth="2"/> }
+  </div>
+  <h3>{Title}</h3>
+  <p>{Description}</p>
+  <div class="line"></div>
+</div>
+
+<style>
+  .card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 1rem;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+    color: white;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+
+    &:hover {
+      transform: translateY(-10px) scale(1.02);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+      border-color: #a844ff;
+
+      & .icon {
+        scale: 1.1;
+        transform: rotate(10deg);
+      }
+
+      & .line {
+        opacity: 1;
+      }
+    }
+
+    .icon {
+      height: 70px;
+      width: 70px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.2rem;
+      transition: all .3s ease-in-out;
+    }
+
+    h3 {
+      font-size: 1.4rem;
+      margin-bottom: 0.7rem;
+    }
+
+    p {
+      font-size: 1rem;
+      color: #d1d5dc;
+      line-height: 1.5;
+    }
+
+    .line {
+      margin-top: 1rem;
+      height: 5px;
+      width: 90%;
+      opacity: 0;
+      transition: opacity .3s ease-in-out;
+      background: linear-gradient(
+        to right,
+        transparent,
+        #A84AF3 30%,
+        #A84AF3 70%,
+        transparent
+      );
+    }
+  }
+</style>
