@@ -12,6 +12,8 @@ import CardsFeatures from "../Components/Index/CardsFeatures.astro";
 import Calendar from "../Components/Icons/Calendar.astro";
 import MapPin from "../Components/Icons/MapPin.astro";
 import PlayerPlay from "../Components/Icons/PlayerPlay.astro";
+import Sparkles from "../Components/Icons/Sparkles.astro";
+import ArrowNarrowRight from "../Components/Icons/arrowNarrowRight.astro";
 ---
 
 <Layout TitlePage="AniHub">
@@ -42,6 +44,15 @@ import PlayerPlay from "../Components/Icons/PlayerPlay.astro";
 					<CardsFeatures Icon={MapPin} Title="Enfoque Regional" Description="Filtros especiales para doblaje latino, tendencias locales y contenido relevante para Argentina." Gradient="linear-gradient(135deg, #8e2de2, #4a00e0)" />
 					<CardsFeatures Icon={PlayerPlay} Title="Seguimiento Personal" Description="Lleva un registro de lo que viste, planeas ver y tus estadísticas personales de anime." Gradient="linear-gradient(135deg, #ff512f, #dd2476)" />
 				</div>
+			</section>
+			<section class="callToAction">
+				<h2>Únete a la comunidad anime <br /> argentina</h2>
+				<p>Miles de fans ya están usando AniHub para descubrir, votar y discutir sobre <br /> anime. ¡No te quedes afuera!</p>
+				<button>
+          <Sparkles size="24" color="#fff" strokeWidth="2"/>
+          Crear Cuenta Gratis
+          <ArrowNarrowRight size="24" color="#fff" strokeWidth="2"/>
+        </button>
 			</section>
     </main>
     <Footer />
@@ -185,6 +196,81 @@ import PlayerPlay from "../Components/Icons/PlayerPlay.astro";
           justify-items: center;
         }
 			}
+
+			& .callToAction {
+        position: relative;
+        min-height: 50vh;
+        width: 100%;
+        overflow: hidden;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				padding-top: 5rem;
+				& h2 {
+					font-size: 2.5rem;
+					color: #fff;
+					text-align: center;
+					margin-bottom: 1rem;
+				}
+
+				& p {
+					color: #fff;
+					font-size: 1.1rem;
+					text-align: center;
+					margin-bottom: 2.5rem;
+				}
+
+				& button {
+					height: 2.7rem;
+					width: 20rem;
+					border-radius: 10px;
+					border: none;
+					font-size: 1.1rem;
+					cursor: pointer;
+					color: #fff;
+					font-weight: 600;
+					background: linear-gradient(90deg, #a844ff, #ff4ecd, #a844ff);
+          background-size: 200% 100%;
+          background-position: left;
+          transition: all 0.3s ease-in-out;
+					display: flex;
+					flex-direction: row;
+					justify-content: center;
+					align-items: center;
+					gap: 1rem;
+					&:hover {
+            background-position: right;
+            scale: 1.1;
+            box-shadow: 0 5px 10px -5px #a844ff;
+          }
+				}
+				& svg:first-child {
+          animation: spinRight 3s linear infinite;
+        }
+      }
+
+      .callToAction::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 1px;
+        width: 100%;
+        background: linear-gradient(
+          to right,
+          transparent,
+          #a844ff,
+          #ff4ecd,
+          #a844ff,
+          transparent
+        );
+      }
     }
+
+		@keyframes spinRight {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+		}
   </style>
 </Layout>
