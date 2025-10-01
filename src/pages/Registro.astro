@@ -1,0 +1,65 @@
+---
+import Layout from "../Layouts/layout.astro";
+import { Form } from "../Components/Registro/Form";
+---
+
+<Layout TitlePage="Registro">
+
+  <div class="Body">
+    <div class="Form">
+      <div class="Form__Title">
+        <h1>Únete a</h1>
+        <img src="AniHub-logo-trasparent.webp" alt="Logo De AniHub">
+      </div>
+      <p>Crea tu cuenta y forma parte de la comunidad anime <br /> argentina</p>
+      <Form client:load/>
+    </div>
+    
+  </div>
+
+  <style>
+    .Body {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background:
+        radial-gradient(2px 2px at 20px 30px, white, transparent 40%) repeat,
+        linear-gradient(#221B42 0%, #611f9b 70%, #221B42 100%);
+      background-size: 200px 200px, cover;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      & .Form {
+        min-height: 90vh;
+        width: 35vw;
+        backdrop-filter: invert(8%);
+        border-radius: 12px;
+        border: 1px solid #784ca1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        & .Form__Title {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          gap: .6rem;
+          & h1 {
+            color: #fff;
+            font-size: 2.5rem;
+          }
+          & img {
+            height: 70px;
+            width: 180px;
+            object-fit: contain;
+          }
+        }
+        & p {
+          text-align: center;
+          color: #C4C4D1;
+        }
+      }
+    }
+  </style>
+
+</Layout>

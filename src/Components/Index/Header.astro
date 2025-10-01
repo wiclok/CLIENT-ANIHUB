@@ -3,7 +3,7 @@
     <img src="AniHub-logo-trasparent.webp" alt="Logo De AniHub" />
     <div class="Containers-Buttons">
       <button class="Button-Login">Iniciar Sesión</button>
-      <button class="Button-Register">Registrarse</button>
+      <a class="Button-Register" href="/Registro">Registrarse</a>
     </div>
   </div>
 </header>
@@ -62,9 +62,14 @@
           background-size: 200% 100%;
           background-position: left;
           color: white;
-          font-size: 1rem;
+          font-size: 1.1em;
           cursor: pointer;
           transition: all 0.3s ease-in-out;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          text-decoration: none;
           &:hover {
             background-position: right;
             scale: 1.1;
